@@ -40,4 +40,4 @@ lib_deps =
     bmellink/IBusBM @ ^1.1.4
     https://github.com/lemmingDev/ESP32-BLE-Gamepad.git
 
-
+![RC Dashboard Screenshot](assets/esp32.png)
