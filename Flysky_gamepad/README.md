@@ -4,6 +4,16 @@
 (FlySky 6CH)This project transforms a FlySky RC Transmitter into a high-performance Wireless Bluetooth Gamepad using an ESP32.
 It is specifically optimized for flight simulators like PicaSim and works seamlessly on Windows 11.
 
+## 🔌 Wiring Diagram
+
+> **⚠️ IMPORTANT:** Always ensure a common ground (GND) between the ESP32 and the RC Receiver to prevent signal noise.
+
+| Component Pin | ESP32 Pin | Description |
+| :--- | :--- | :--- |
+| **iBUS Signal** | **GPIO 16 (RX2)** | Serial Data Input |
+| **VCC** | **VIN / 5V** | Power (Check your Receiver's voltage spec) |
+| **GND** | **GND** | Common Ground |
+
 ## 📁 Project Structure
 ```text
 ├── include/
@@ -17,22 +27,13 @@ It is specifically optimized for flight simulators like PicaSim and works seamle
 ├── platformio.ini      # Library dependencies & Build settings
 └── README.md           # Project documentation
 
-
 ✨ Key FeaturesZero-Latency Response: Built on FreeRTOS with dual-core task distribution for maximum speed.
 6-Channel Analog Precision: Supports 4 primary stick axes plus 2 additional switches/potentiometers.
 Advanced Split-Mapping: Ensures a perfect 1500 center point with independent scaling for positive and negative ranges to prevent stick "jumps".
 Smart Deadzone: Integrated $10\text{-}15$ point neutral zone to eliminate stick jitter and drift.
 
-🛠️ Hardware SetupWiring Diagram
-
-FlySky Receiver (i-BUS)     ESP32 Pin
-VCC (5V)                    VIN / 5V
-GND                         GND
-Signal (i-BUS)              GPIO 16 (RX2)
-
-🚀 Installation & Build1.
-
-Requirements
+🚀 Installation & Build
+Requirements:
 
 PlatformIO installed in VS Code.
 ESP32 DevKit V1 or similar.2.
@@ -40,5 +41,3 @@ DependenciesEnsure your platformio.ini includes the following libraries
 lib_deps =
     bmellink/IBusBM @ ^1.1.4
     https://github.com/lemmingDev/ESP32-BLE-Gamepad.git
-
-![RC Dashboard Screenshot](assets/esp32.png)
