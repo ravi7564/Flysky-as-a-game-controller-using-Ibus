@@ -1,4 +1,5 @@
 🎮 ESP32 i-BUS to BLE Gamepad
+![RC Dashboard Screenshot](assets/esp32.png)
 
 (FlySky 6CH)This project transforms a FlySky RC Transmitter into a high-performance Wireless Bluetooth Gamepad using an ESP32.
 It is specifically optimized for flight simulators like PicaSim and works seamlessly on Windows 11.
