@@ -23,9 +23,8 @@ It is specifically optimized for flight simulators like PicaSim and works seamle
 ├── src/
 │   ├── ble_task.cpp    # Analog mapping, Deadzone logic & BLE transmission
 │   ├── ibus_task.cpp   # Serial i-BUS data processing (Task-based)
-│   └── main.cpp        # System initialization & FreeRTOS task creation
-├── platformio.ini      # Library dependencies & Build settings
-└── README.md           # Project documentation
+|   └── main.cpp        # System initialization & FreeRTOS task creation
+└──platformio.ini      # Library dependencies & Build settings
 
 ✨ Key FeaturesZero-Latency Response: Built on FreeRTOS with dual-core task distribution for maximum speed.
 6-Channel Analog Precision: Supports 4 primary stick axes plus 2 additional switches/potentiometers.
