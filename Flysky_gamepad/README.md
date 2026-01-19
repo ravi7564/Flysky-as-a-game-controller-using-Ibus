@@ -3,8 +3,8 @@
 (FlySky 6CH)This project transforms a FlySky RC Transmitter into a high-performance Wireless Bluetooth Gamepad using an ESP32.
 It is specifically optimized for flight simulators like PicaSim and works seamlessly on Windows 11.
 
-📂 Project StructureFollowing the modular PlatformIO architecture:
-
+## 📁 Project Structure
+```text
 ├── include/
 │   ├── ble_task.h      # BLE task and HID configuration
 │   ├── ibus_task.h     # i-BUS protocol parsing headers
