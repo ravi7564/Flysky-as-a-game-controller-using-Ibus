@@ -2,7 +2,6 @@
 #include "main.h"
 
 void iBUS_Task(void* pvParameters) {
-    // iBUS protocol 32 bytes ka hota hai
     uint8_t ibusBuf[32];
 
     while (true) {
@@ -13,13 +12,10 @@ void iBUS_Task(void* pvParameters) {
 
             if (header == 0x20 && Serial2.peek() == 0x40) {
                 ibusBuf[0] = 0x20;
-                // Baaki 31 bytes jaldi se read karein
                 Serial2.readBytes(&ibusBuf[1], 31);
 
-                // Step 3: Mutex ke saath safely channels update karein
                 if (xSemaphoreTake(channelMutex, 0) == pdTRUE) {
                     for (int i = 0; i < 6; i++) {
-                        // iBUS data format: Little Endian
                         channels[i] = ibusBuf[2 + i * 2] | (ibusBuf[3 + i * 2] << 8);
                     }
                     xSemaphoreGive(channelMutex);
